@@ -1,0 +1,94 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Paint.Vectorized;"
+        WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style TargetType="Line">
+            <Setter Property="Stroke" Value="BlueViolet"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        <Style TargetType="Polyline">
+            <Setter Property="Stroke" Value="BlueViolet"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        <Style TargetType="Polygon">
+            <Setter Property="Stroke" Value="DarkGreen"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Yellow"/>
+        </Style>
+        <Style TargetType="Ellipse">
+            <Setter Property="Stroke" Value="Coral"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        <Style TargetType="Rectangle">
+            <Setter Property="Stroke" Value="DarkOliveGreen"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+    </Window.Resources>
+    <Canvas Name="Workspace" Background="White" Cursor="Cross">
+        <Canvas.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Назад" Click="UndoButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Undo.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Вперёд" Click="RedoButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Redo.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Линия" Click="LineButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Line.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Ломаная" Click="PolylineButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Polyline.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Многоугольник" Click="PolygonButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Polygon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Кривая Безье" Click="BezierButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Bezier.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Эллипс" Click="EllipseButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Ellipse.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Прямоугольник" Click="RectangleButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Rectangle.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Перемещение" Click="MoveButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Move.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Изменить размер" Click="ResizeButtonClick">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Resize.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Canvas.ContextMenu>
+    </Canvas>
+</Window>
